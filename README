@@ -21,7 +21,7 @@ You can get the source code of each ATK release as a tarball:
 
 You can also clone the ATK master branch from GNOME repository:
 
-  https://git.gnome.org/browse/atk
+  https://gitlab.gnome.org/GNOME/atk
 
 Building
 --------
