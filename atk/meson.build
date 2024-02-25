@@ -165,4 +165,5 @@ pkgconfig.generate(libatk,
   subdirs: atk_api_name,
   filebase: 'atk',
   libraries: glib_dep,
+  extra_cflags: atk_visibility_cflags,
 )
