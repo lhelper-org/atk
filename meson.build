@@ -53,6 +53,7 @@ common_ldflags = []
 
 test_cflags = []
 
+atk_visibility_cflags = []
 # Symbol visibility
 if get_option('default_library') != 'static'
   if host_system == 'windows'
@@ -65,6 +66,12 @@ if get_option('default_library') != 'static'
     atk_conf.set('_ATK_EXTERN', '__attribute__((visibility("default"))) extern')
     test_cflags += ['-fvisibility=hidden']
   endif
+else
+  # if _ATK_EXTERN is not set it will be defined to 'extern'
+  # in atkversion.h
+  atk_conf.set('ATK_STATIC_COMPILATION', '1')
+  atk_visibility_cflags += '-DATK_STATIC_COMPILATION'
+  test_cflags += '-DATK_STATIC_COMPILATION'
 endif
 
 # Check all compiler flags
