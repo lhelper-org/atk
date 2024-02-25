@@ -1,0 +1,11 @@
+#!/bin/bash
+CC="${CC:-gcc}"
+CXX="${CXX:-g++}"
+
+BUILD_TYPE="Release"
+
+packages=(
+  "libffi" "zlib" "pcre2" "proxy-libintl"
+  "glib" "libxml2 -sax1"
+)
+
